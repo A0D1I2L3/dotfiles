@@ -1,0 +1,492 @@
+@import "../omarchy/current/theme/waybar.css";
+
+/* -------------------- Base -------------------- */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    min-height: 0;
+    font-size: 98%;
+    font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+    box-shadow: none;
+    text-shadow: none;
+}
+
+/* Override all hover states to prevent white shading */
+*:hover {
+    background-color: @background;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+/* -------------------- Waybar window -------------------- */
+window#waybar {
+    background-color: @background;
+    border-radius: 25px;
+    padding: 4px;
+}
+
+/* -------------------- Tooltips -------------------- */
+tooltip {
+    color: @foreground;
+    background: @background;
+    opacity: 1;
+    border: 1px solid @foreground;
+}
+
+/* -------------------- Module groups -------------------- */
+.modules-left {
+    background-color: @background;
+    border-radius: 20px 0px 0px 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
+    margin-left: 6px;
+    margin-right: 0px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.modules-center {
+    background-color: @background;
+    border-radius: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.modules-right {
+    background-color: @background;
+    border-radius: 0px 20px 20px 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
+    margin-left: 0px;
+    margin-right: 6px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+/* -------------------- Buttons -------------------- */
+#taskbar button,
+#workspaces button {
+    color: @foreground;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 9px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+    background-color: @background;
+}
+
+/* Active / Focused */
+#taskbar button.active,
+#workspaces button.active {
+    color: @selected-text;
+    padding-left: 15px;
+    padding-right: 10px;
+    transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button.focused {
+    color: @foreground;
+}
+
+/* Urgent workspace */
+#workspaces button.urgent {
+    color: orangered;
+    border-radius: 10px;
+}
+
+/* Hover */
+#taskbar button:hover,
+#workspaces button:hover {
+    color: @selected-text;
+    padding-left: 15px;
+    padding-right: 10px;
+    transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+    box-shadow: none;
+    text-shadow: none;
+    background-color: @background;
+}
+
+/* -------------------- Modules -------------------- */
+#backlight,
+#backlight-slider,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#disk,
+#idle_inhibitor,
+#keyboard-state,
+#memory,
+#mode,
+#mpris,
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#pulseaudio-slider,
+#taskbar,
+#temperature,
+#tray,
+#window,
+#wireplumber,
+#workspaces,
+#custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
+#custom-cycle_wall,
+#custom-dot_update,
+#custom-file_manager,
+#custom-keybinds,
+#custom-keyboard,
+#custom-light_dark,
+#custom-lock,
+#custom-hint,
+#custom-hypridle,
+#custom-menu,
+#custom-playerctl,
+#custom-power_vertical,
+#custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
+#custom-swaync,
+#custom-tty,
+#custom-updater,
+#custom-weather,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.default,
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.severe,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.sunnyDay,
+#custom-omarchy,
+#custom-screenrecording-indicator,
+#custom-update,
+#custom-updater,
+#custom-hyprpicker,
+#custom-notifications,
+#custom-theme,
+#custom-updates,
+#custom-wallchange,
+#custom-wbar,
+#custom-l_end,
+#custom-r_end,
+#custom-sl_end,
+#custom-sr_end,
+#custom-rl_end,
+#custom-rr_end,
+#cava,
+#upower#headset,
+#upower,
+#custom-spacer,
+#custom-smallspacer,
+#custom-mouse,
+#custom-cliphist,
+#custom-gpuinfo,
+#custom-keybindhint,
+#language,
+#custom-led,
+#custom-expand,
+#group-minimized,
+#custom-vpn {
+    color: @foreground;
+    background-color: @background;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 6px;
+    padding-left: 6px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+#custom-cava_mviz {
+    color: @selected-text;
+}
+/* Special spacing for corner modules */
+
+/* Module hover states */
+#backlight:hover,
+#backlight-slider:hover,
+#battery:hover,
+#bluetooth:hover,
+#clock:hover,
+#cpu:hover,
+#disk:hover,
+#idle_inhibitor:hover,
+#keyboard-state:hover,
+#memory:hover,
+#mode:hover,
+#mpris:hover,
+#network:hover,
+#custom-omarchy,
+#power-profiles-daemon:hover,
+#pulseaudio:hover,
+#pulseaudio-slider:hover,
+#temperature:hover,
+#tray:hover,
+#window:hover,
+#wireplumber:hover,
+#custom-backlight:hover,
+#custom-browser:hover,
+#custom-cava_mviz:hover,
+#custom-cycle_wall:hover,
+#custom-dot_update:hover,
+#custom-file_manager:hover,
+#custom-keybinds:hover,
+#custom-keyboard:hover,
+#custom-light_dark:hover,
+#custom-lock:hover,
+#custom-hint:hover,
+#custom-hypridle:hover,
+#custom-menu:hover,
+#custom-playerctl:hover,
+#custom-power_vertical:hover,
+#custom-power:hover,
+#custom-quit:hover,
+#custom-reboot:hover,
+#custom-settings:hover,
+#custom-spotify:hover,
+#custom-swaync:hover,
+#custom-tty:hover,
+#custom-updater:hover,
+#custom-weather:hover,
+#custom-weather.clearNight:hover,
+#custom-weather.cloudyFoggyDay:hover,
+#custom-weather.cloudyFoggyNight:hover,
+#custom-weather.default:hover,
+#custom-weather.rainyDay:hover,
+#custom-weather.rainyNight:hover,
+#custom-weather.severe:hover,
+#custom-weather.showyIcyDay:hover,
+#custom-weather.snowyIcyNight:hover,
+#custom-weather.sunnyDay:hover,
+#custom-omarchy:hover,
+#custom-screenrecording-indicator:hover,
+#custom-update:hover,
+#custom-hyprpicker:hover,
+#custom-notifications:hover,
+#custom-theme:hover,
+#custom-updates:hover,
+#custom-wallchange:hover,
+#custom-wbar:hover,
+#custom-l_end:hover,
+#custom-r_end:hover,
+#custom-sl_end:hover,
+#custom-sr_end:hover,
+#custom-rl_end:hover,
+#custom-rr_end:hover,
+#cava:hover,
+#upower#headset:hover,
+#upower:hover,
+#custom-spacer:hover,
+#custom-smallspacer:hover,
+#custom-mouse:hover,
+#custom-cliphist:hover,
+#custom-gpuinfo:hover,
+#custom-keybindhint:hover,
+#language:hover,
+#custom-led:hover,
+#custom-expand:hover,
+#group-minimized:hover,
+#custom-vpn:hover {
+    color: @foreground;
+    background-color: @background;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+#mode {
+    font-weight: bold;
+}
+
+#battery {
+    padding: 1px 3px;
+    margin: 5px 12px 5px 5px;
+}
+
+#bluetooth {
+    font-size: 15px;
+}
+#custom-omarchy {
+    margin: 5px -5px 5px 12px;
+}
+
+#battery.critical:not(.charging) {
+    color: orangered;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+/* -------------------- Sliders -------------------- */
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    min-width: 0px;
+    min-height: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 80px;
+    min-height: 5px;
+    border-radius: 5px;
+    background-color: @background;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    min-height: 10px;
+    border-radius: 5px;
+    background-color: @foreground;
+}
+
+/* -------------------- Indicators / Active States -------------------- */
+#custom-screenrecording-indicator.active {
+    color: orangered;
+    animation: blink 1.5s infinite ease-in-out;
+}
+
+#custom-hypridle.notactive,
+#idle_inhibitor.activated {
+    color: orangered;
+}
+
+#pulseaudio.muted {
+    color: orangered;
+}
+
+#pulseaudio-microphone.muted {
+    color: orangered;
+}
+
+#temperature.critical {
+    color: @foreground;
+}
+
+#battery.critical:not(.charging) {
+    color: orangered;
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @foreground;
+}
+
+/* -------------------- MPRIS Animation -------------------- */
+#mpris {
+    color: @foreground;
+    font-size: 15px;
+    font-weight: bold;
+    animation: repeat;
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* -------------------- Spacers -------------------- */
+#custom-spacer,
+#custom-smallspacer {
+    opacity: 0;
+}
+
+/* -------------------- Expand Button -------------------- */
+#custom-expand {
+    min-width: 25px;
+    font-size: 16px;
+}
+
+/* -------------------- Group Minimized -------------------- */
+#group-minimized {
+    border-left: solid;
+    border-left-width: 0.5;
+}
+
+/* -------------------- Custom Borders -------------------- */
+#custom-r_end {
+    border-radius: 0px 7px 7px 0px;
+    margin-right: 1px;
+    padding-right: 3px;
+}
+
+#custom-l_end {
+    border-radius: 7px 0px 0px 7px;
+    margin-left: 1px;
+    padding-left: 3px;
+}
+
+#custom-sr_end {
+    border-radius: 0px;
+    margin-right: 1px;
+    padding-right: 3px;
+}
+
+#custom-sl_end {
+    border-radius: 0px;
+    margin-left: 1px;
+    padding-left: 3px;
+}
+
+#custom-rr_end {
+    border-radius: 0px 7px 7px 0px;
+    margin-right: 1px;
+    padding-right: 3px;
+}
+
+#custom-rl_end {
+    border-radius: 7px 0px 0px 7px;
+    margin-left: 1px;
+    padding-left: 3px;
+}
+
+/* -------------------- Animations -------------------- */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes blink {
+    to {
+        color: @foreground;
+    }
+}
+
+#custom-vpn.active {
+    color: @selected-text;
+}
+
+#custom-vpn.inactive {
+    color: @foreground;
+}
