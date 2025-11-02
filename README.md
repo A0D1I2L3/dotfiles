@@ -4,6 +4,10 @@ Custom dotfiles I use on **Omarchy Linux**.
 ###  Waybar
 
 ![Waybar Preview](assets/waybar.png)
+![Waybar Preview](assets/waybar2.png)
+![Waybar Preview](assets/waybar3.png)
+
+
 Custom Waybar setup for Hyprland, originally based on one of the styles from  [JaKooLit’s Dots](https://github.com/JaKooLit/Hyprland-Dots/tree/c862835221decf03b6640bb43e4044861cceaa04/config/waybar), which I further modified for better integration with my setup.
 
 - **Workspaces** – Clean Hyprland icons with smooth transitions.
