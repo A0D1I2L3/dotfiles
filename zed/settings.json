@@ -1,0 +1,84 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "notification_panel": {
+    "dock": "right"
+  },
+  "agent_servers": {
+    "OpenCode": {
+      "command": "opencode",
+      "args": ["acp"]
+    }
+  },
+  "terminal": {
+    "dock": "bottom"
+  },
+  "bottom_dock_layout": "left_aligned",
+  "restore_on_startup": "last_workspace",
+
+  "icon_theme": "JetBrains New UI Icons (Dark)",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": "Vhs80",
+
+  "autosave": "on_focus_change",
+
+  "title_bar": {
+    "show_branch_icon": true,
+    "show_menus": false
+  },
+  "minimap": {
+    "show": "auto"
+  },
+  "indent_guides": {
+    "enabled": true,
+    "line_width": 1,
+    "active_line_width": 2,
+
+    "coloring": "indent_aware"
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    // Whether to show quick action buttons.
+    "quick_actions": false,
+    "selections_menu": false,
+    "agent_review": false,
+    "code_actions": false
+  },
+  "gutter": {
+    "min_line_number_digits": 1
+  },
+  "project_panel": {
+    "button": true,
+    "entry_spacing": "standard",
+    "indent_size": 11
+  },
+  "collaboration_panel": {
+    "button": false,
+    "dock": "left"
+  },
+  "tab_bar": {
+    // Whether or not to show the tab bar in the editor
+    "show": true,
+    // Whether or not to show the navigation history buttons.
+    "show_nav_history_buttons": true,
+    // Whether or not to show the tab bar buttons.
+    "show_tab_bar_buttons": true
+  },
+  // Settings related to the editor's tabs
+  "tabs": {
+    "git_status": true,
+    "file_icons": true
+  },
+  "file_finder": {
+    "modal_max_width": "medium",
+    "git_status": true,
+    "include_ignored": "smart"
+  }
+}

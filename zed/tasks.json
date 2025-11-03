@@ -1,0 +1,18 @@
+[
+  {
+    "label": "file_finder",
+    "command": "bash --noprofile --norc -c 'zeditor \"$(tv files)\"'",
+    "hide": "always",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true,
+    "shell": { "program": "bash" }
+  },
+  {
+    "label": "find_in_files",
+    "command": "bash --noprofile --norc -c 'zeditor \"$(tv --exact text)\"'",
+    "hide": "always",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true,
+    "shell": { "program": "bash" }
+  }
+]

@@ -1,0 +1,71 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "(Editor && mode == full)",
+    "bindings": {
+      "alt-z": "editor::ToggleSoftWrap"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-c": "editor::Copy"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-v": "editor::Paste"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-b": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-b": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-b": "project_panel::ToggleFocus"
+    }
+  },
+
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-p": [
+        "task::Spawn",
+        { "task_name": "file_finder", "reveal_target": "center" }
+      ],
+      "shift-ctrl-f ": [
+        "task::Spawn",
+        { "task_name": "find_in_files", "reveal_target": "center" }
+      ]
+    }
+  }
+]
